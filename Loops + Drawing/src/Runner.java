@@ -16,6 +16,11 @@ public class Runner extends JPanel{
 		Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(5));
         
+        int red;
+        int green;
+        int blue;
+        Color color;
+        
 		 
 		//1) draw a concentric rectangle that's 10pixels from all sides of the "gray"
 		//portion of the GUI
@@ -29,9 +34,51 @@ public class Runner extends JPanel{
 		//3) Draw a vertical line to bisect the shape again
 		g2.drawLine(765/2, 10, 765/2,550 );
 		
+		int lineNum = 0;
+		while (lineNum < 100) {
+			red = (int) (Math.random() * 255);
+			green = (int) (Math.random() * 255);
+			blue = (int) (Math.random() * 255);
+			color = new Color(red, green, blue);
+			g2.setColor(color);
+			int x1 = (int) (Math.random() * 351) + 10;
+			int x2 = (int) (Math.random() * 201) + 10;
+			int y1 = (int) (Math.random() * 301) + 5;
+			int y2 = (int) (Math.random() * 251) + 5;
+			g2.drawLine(x1, y1, x2, y2);
+			lineNum++;
+		}
 		
-		//4) small rectangles on top-left
-		g2.drawLine(765/4, 10, 765/4, 550/2-10);
+		int circleNum = 0;
+		while (circleNum < 100) {
+			red = (int) (Math.random() * 255);
+			green = (int) (Math.random() * 255);
+			blue = (int) (Math.random() * 255);
+			color = new Color(red, green, blue);
+			g2.setColor(color);
+			int di = (int) (Math.random() * 101) + 5;
+			int centerX = (int) (Math.random() * 301) + 10;
+			int centerY = (int) (Math.random() * (500 - (251 + 1))) + 251;
+			g2.drawOval(centerX, centerY, di, di);
+			circleNum++;
+		}
+		
+		int squareNum = 0;
+		while (squareNum < 100) {
+			red = (int) (Math.random() * 255);
+			green = (int) (Math.random() * 255);
+			blue = (int) (Math.random() * 255);
+			color = new Color(red, green, blue);
+			g2.setColor(color);
+			
+			int startX = (int) (Math.random() * (700 - (380-1))) + 380;
+			int startY = (int) (Math.random() *201) + 10;
+			
+			g2.fillRect(startX, startY, 50, 50);
+			squareNum++;
+		}
+		
+		
 		
 		
 		/* 
