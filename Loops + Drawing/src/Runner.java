@@ -24,7 +24,7 @@ public class Runner extends JPanel{
 		 
 		//1) draw a concentric rectangle that's 10pixels from all sides of the "gray"
 		//portion of the GUI
-		g2.drawRect(10, 10, 765, 540);
+		/* g2.drawRect(10, 10, 765, 540);
 		
 		
 		//2) Draw a horizontal line to bisect the Rectangle
@@ -77,7 +77,34 @@ public class Runner extends JPanel{
 			g2.fillRect(startX, startY, 50, 50);
 			squareNum++;
 		}
+		 */
+        
+        for (int y=0, x=0; y <= 1000; y+=20) {
+			g2.drawLine(0, y, x, 1000);
+			x+= 20;
+		}
 		
+		for (int y=0, x=1000; y <= 1000; y+= 20) {
+			g2.drawLine(0, y, x, 0);
+			x-= 20;
+		}
+	
+		
+		int x3 = 1200;
+		int y3 = 0;
+		while (y3<=1000) {
+			g2.drawLine(1200, y3, x3, 1000);
+			x3 -= 20;
+			y3+=20;
+		}
+		
+		int x4 = 200;
+		int y4 = 0;
+		while (y4 <= 1000) {
+			g2.drawLine(1200, y4, x4, 0);
+			x4 += 20;
+			y4 += 20;
+		}
 		
 		
 		
@@ -113,7 +140,7 @@ public class Runner extends JPanel{
 	public Runner() {
 		JFrame f = new JFrame("Method Use");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.setSize(800,600);
+		f.setSize(1200,1000);
 		f.add(this);
 		f.setVisible(true);
 		
